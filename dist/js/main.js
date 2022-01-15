@@ -1,0 +1,1 @@
+(()=>{"use strict";(()=>{const e=document.getElementById("call"),t=document.querySelector(".header-modal");e.addEventListener("click",(e=>{e.preventDefault(),t.style.display="flex"})),t.addEventListener("click",(e=>{e.preventDefault(),e.target.classList.contains("header-modal__close")&&(t.style.display="none")}))})()})();
