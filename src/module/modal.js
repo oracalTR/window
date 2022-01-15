@@ -1,3 +1,5 @@
+import { animate } from "./helpers";
+
 const modal = () => {
     const callModal = document.getElementById('call');
     const headerModal = document.querySelector('.header-modal');
@@ -8,8 +10,17 @@ const modal = () => {
     
     callModal.addEventListener('click', (e) => {
         e.preventDefault();
-        headerModal.style.display = 'flex';
-        overlayModal.style.display = 'flex';
+        animate({
+            duration: 500,
+            timing(timeFraction) {
+              return timeFraction;
+            },
+            draw(progress) {
+                headerModal.style.opacity = progress;
+                headerModal.style.display = 'block';
+                overlayModal.style.display = 'flex';
+            }
+        });
     });
     
     headerModal.addEventListener('click', (e) => {
@@ -24,8 +35,18 @@ const modal = () => {
     servicesBtn.forEach(elem => {
         elem.addEventListener('click', (e) => {
             e.preventDefault();
-            servicesModal.style.display = 'flex';
-            overlayModal.style.display = 'flex';
+            animate({
+                duration: 500,
+                timing(timeFraction) {
+                  return timeFraction;
+                },
+                draw(progress) {
+                    servicesModal.style.opacity = progress;
+                    servicesModal.style.display = 'flex';
+                    overlayModal.style.display = 'flex';
+                }
+            });
+            
         });
     });
     servicesModal.addEventListener('click', (e) => {
