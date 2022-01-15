@@ -1,3 +1,5 @@
 import modal from './module/modal';
 
-modal();
+document.addEventListener('DOMContentLoaded', () => {
+    modal();
+});
