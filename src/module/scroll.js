@@ -8,8 +8,6 @@ const scroll = () => {
     smoothScroll.style.cursor = 'pointer';
     window.addEventListener('scroll', (e) => {
         if(window.pageYOffset >= 664) {
-            console.log("Идет прокрутка");
-            console.log(smoothScroll.style.display);
             if(smoothScroll.style.display == '') {
                 animate({
                     duration: 1000,
