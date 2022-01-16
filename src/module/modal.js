@@ -57,6 +57,15 @@ const modal = () => {
             overlayModal.style.display = 'none';
         }
     });
+    overlayModal.addEventListener('click', (e) => {
+        e.preventDefault();
+        let target = e.target;
+        if(target.classList.contains('overlay')) {
+            headerModal.style.display = 'none';
+            servicesModal.style.display = 'none';
+            overlayModal.style.display = 'none';
+        }
+    });
 };
 
 export default modal;
