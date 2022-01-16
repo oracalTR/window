@@ -40,7 +40,6 @@ const slider = () => {
           prevEl: ".services__arrow--left",
         },
     });
-    console.log('Это слайдер');
 };
 
 export default slider;
