@@ -547,7 +547,7 @@ input.error {
 }
 .service-image {
   width: 220px;
-  height: 220px;
+  min-height: 220px;
   position: absolute;
 }
 .service-button {
@@ -1323,9 +1323,9 @@ p.services-image_mobile {
     max-width: 75%;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 1240px) {
   .service-image {
-    display: none;
+    opacity: 0.1;
   }
   .service-text {
     margin-left: 0;
@@ -1593,7 +1593,6 @@ input.error {
 .benefits-wrap {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
 }
 
 .benefits__item {
