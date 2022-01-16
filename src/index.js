@@ -5,5 +5,5 @@ import timer from './module/timer';
 document.addEventListener('DOMContentLoaded', () => {
     scroll();
     modal();
-    timer('22 January 2022');
+    timer('21 January 2022');
 });

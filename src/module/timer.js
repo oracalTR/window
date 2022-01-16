@@ -3,10 +3,6 @@ const timer = (deadLine) => {
     const timerHours = document.querySelectorAll('.count_2>span');
     const timerMinutes = document.querySelectorAll('.count_3>span');
     const timerSeconds = document.querySelectorAll('.count_4>span');
-    console.log('timerDays: ', timerDays);
-    console.log('timerHours: ', timerHours);
-    console.log('timerMinutes: ', timerMinutes);
-    console.log('timerSeconds: ', timerSeconds);
     
     const countTimer = () => {
         let dateStop = new Date(deadLine).getTime();
@@ -30,11 +26,20 @@ const timer = (deadLine) => {
             timerSeconds.forEach(elem => {
                 elem.textContent = seconds < 10 ? '0' + seconds : seconds;
             });
-            // timerHours.textContent = hours < 10 ? '0' + hours : hours;
-            // timerMinutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-            // timerSeconds.textContent = seconds < 10 ? '0' + seconds : seconds;
         } else {
             clearInterval(runTimer);
+            timerDays.forEach(elem => {
+                elem.textContent = '00';
+            });
+            timerHours.forEach(elem => {
+                elem.textContent = '00';
+            });
+            timerMinutes.forEach(elem => {
+                elem.textContent = '00';
+            });
+            timerSeconds.forEach(elem => {
+                elem.textContent = '00';
+            });
         }
     };
     const runTimer = setInterval(countTimer, 1000);
