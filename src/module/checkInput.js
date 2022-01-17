@@ -1,4 +1,5 @@
 import calc from './calc';
+import sendForm from './sendform';
 
 const checkInput = () => {
     const form = document.querySelectorAll('form');
