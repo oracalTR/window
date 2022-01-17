@@ -9,7 +9,6 @@ const modal = () => {
 
     
     callModal.addEventListener('click', (e) => {
-        e.preventDefault();
         animate({
             duration: 500,
             timing(timeFraction) {
@@ -24,7 +23,6 @@ const modal = () => {
     });
     
     headerModal.addEventListener('click', (e) => {
-        e.preventDefault();
         let target = e.target;
         if(target.classList.contains('header-modal__close')) {
             headerModal.style.display = 'none';
@@ -34,7 +32,6 @@ const modal = () => {
 
     servicesBtn.forEach(elem => {
         elem.addEventListener('click', (e) => {
-            e.preventDefault();
             animate({
                 duration: 500,
                 timing(timeFraction) {
@@ -50,7 +47,6 @@ const modal = () => {
         });
     });
     servicesModal.addEventListener('click', (e) => {
-        e.preventDefault();
         let target = e.target;
         if(target.classList.contains('services-modal__close')) {
             servicesModal.style.display = 'none';
@@ -58,7 +54,6 @@ const modal = () => {
         }
     });
     overlayModal.addEventListener('click', (e) => {
-        e.preventDefault();
         let target = e.target;
         if(target.classList.contains('overlay')) {
             headerModal.style.display = 'none';
