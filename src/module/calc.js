@@ -1,9 +1,18 @@
-const calc = () => {
-  const calcType = document.getElementById('calc-type');
-  const calcTypeMaterial = document.getElementById('calc-type-material');
-  const calcInput = document.getElementById('calc-input');
-  const calcTotal = document.getElementById('calc-total');
+const calc = (type, material, square) => {
+    const calcTotal = document.getElementById('calc-total');
 
+    let totalPrice = 0;
+
+    const calcTotalPrice = () => {
+        totalPrice = (+square * +type * +material).toFixed(2);
+        calcTotal.value = totalPrice;
+    };
+
+    if(type && material && square) {
+        calcTotalPrice();
+    } else {
+        calcTotal.value = '';
+    }
 };
 
 export default calc;

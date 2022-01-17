@@ -9,5 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
     modal();
     timer('21 January 2022');
     slider();
-    calc();
 });
