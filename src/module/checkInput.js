@@ -5,18 +5,36 @@ const checkInput = () => {
     const calcType = document.getElementById('calc-type');
     const calcTypeMaterial = document.getElementById('calc-type-material');
     const calcInput = document.getElementById('calc-input');
+    const calcItems = [calcType, calcTypeMaterial, calcInput];
 
     let  checkName = (value) => {
-        return !/([^а-я-\s]+)/gi.test(value);
+        return !/([^а-яa-z]+)/gi.test(value);
     };
     let checkPhone = (value) => {
         return /^\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}$/g.test(value);
     };
 
-    let checkCalc = /\D/g;
+    let checkCalc = /\D\.\D/g;
 
     let isErrorName = true;
     let isErrorPhone = true;
+
+    const calcTotal = () => {
+        if(calcType.value && calcTypeMaterial.value && calcInput.value) {
+            calc(calcType.value, calcTypeMaterial.value, calcInput.value);
+        }else {
+            calc();
+        }
+    };
+
+    if(calcType && calcTypeMaterial && calcInput) {
+        calcItems.forEach(elem => {
+            elem.addEventListener('input', event => {
+                event.target.value = event.target.value.replace(checkCalc, '');
+                calcTotal();
+            });
+        });
+    }
 
     form.forEach(elem => {
         const inputName = elem.querySelector('input[name="fio"]');
@@ -25,8 +43,8 @@ const checkInput = () => {
         inputPhone.setAttribute("required", true);
         inputName.addEventListener('input', (e) => {
             let inputName = '';
-            if(/([^а-я-\s]+)/gi.test(e.target.value)) {
-                inputName = e.target.value.replace(/([^а-я-\s]+)/gi, ($1) => {
+            if(/([^а-яa-z]+)/gi.test(e.target.value)) {
+                inputName = e.target.value.replace(/([^а-яa-z]+)/gi, ($1) => {
                     let newName = '';
                     newName = ``;
                     return newName;
