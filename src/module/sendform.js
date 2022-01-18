@@ -1,13 +1,14 @@
 const sendForm = (formId, someElem = []) => {
+    console.log('Отправляем форму');
     const divMess = document.createElement('div');
     const sendMes = 'Отправка...';
     const sendError = 'Ошибка отправки, попробуйте позже...';
     const successMess = 'Ваше сообщение успешно отправлено! Наш менеджер скоро свяжется с Вами!';
-    const popup = document.querySelector('.popup');
+    const overlay = document.querySelector('.overlay');
     let formBody = {};
     let formData = new FormData(formId);
     
-    divMess.style.color = '#fff';
+    divMess.style.color = '#00000';
     divMess.classList.add('message');
     
     formData.forEach((value, key) => {
@@ -16,7 +17,9 @@ const sendForm = (formId, someElem = []) => {
     
     someElem.forEach(elem => {
         const element = document.querySelector(`#${elem.id}`);
-        formBody[elem.id] = element.textContent;
+        if(element) {
+            formBody[elem.id] = element.value;
+        }
     });
 
     try {
@@ -44,9 +47,10 @@ const sendForm = (formId, someElem = []) => {
                     formId.querySelector('.message') ? formId.removeChild(formId.querySelector('.message')) : '';
                 }, 3000);
                 setTimeout(() => {
-                    popup.style.display == 'block' ? popup.style.display = 'none' : '';
+                    formId.closest('.header-modal') ? formId.closest('.header-modal').style.display = 'none' : '';
+                    formId.closest('.services-modal') ? formId.closest('.services-modal').style.display = 'none' : '';
+                    overlay.style.display != 'none' ? overlay.style.display = 'none' : '';
                 }, 4000);
-                console.log('Отправка формы');
             })
             .catch(errror => {
                 divMess.textContent = sendError;

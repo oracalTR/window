@@ -87,8 +87,11 @@ const checkInput = () => {
         elem.addEventListener('submit', (e) => {
             e.preventDefault();
             if(!isErrorName && !isErrorPhone) {
+                sendForm(e.target, [{
+                    type: 'block',
+                    id: 'calc-total'
+                }]);
                 elem.reset();
-                console.log('Отправка формы');
             }
         });
     });
