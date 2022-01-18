@@ -1538,6 +1538,10 @@ input.error {
   display: none;
 }
 
+.modal-image {
+  display: none;
+}
+
 .services-modal--opened {
   position: fixed;
   top: 50%;
@@ -1552,6 +1556,18 @@ input.error {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+
+.image-modal--opened {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.image-modal--img {
+  height: 70vh;
 }
 
 .header-modal__close {
@@ -1575,6 +1591,18 @@ input.error {
 }
 
 .services-modal__close:hover {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.image-modal__close:hover {
   color: rgba(0, 0, 0, 0.35);
 }
 
@@ -1666,6 +1694,9 @@ input.error {
 }
 
 @media (min-width: 576px) {
+  .image-modal--img {
+    height: 90vh;
+  }
   .benefits-wrap {
     width: 100%;
     max-width: 576px;

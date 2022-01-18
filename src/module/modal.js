@@ -6,6 +6,7 @@ const modal = () => {
     const overlayModal = document.querySelector('.overlay');
     const servicesBtn = document.querySelectorAll('.service-button');
     const servicesModal = document.querySelector('.services-modal');
+    const imageModal = document.querySelector('.modal-image');
 
     
     callModal.addEventListener('click', (e) => {
@@ -59,6 +60,7 @@ const modal = () => {
             headerModal.style.display = 'none';
             servicesModal.style.display = 'none';
             overlayModal.style.display = 'none';
+            imageModal.style.display = 'none';
         }
     });
 };
