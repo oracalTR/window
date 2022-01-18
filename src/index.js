@@ -4,6 +4,7 @@ import timer from './module/timer';
 import slider from './module/slider';
 import checkInput from './module/checkinput';
 import resizeImage from './module/resizeimage';
+import menu from './module/menu';
 
 document.addEventListener('DOMContentLoaded', () => {
     scroll();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     slider();
     checkInput();
     resizeImage();
+    menu();
 });
