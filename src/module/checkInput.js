@@ -41,7 +41,9 @@ const checkInput = () => {
         const inputName = elem.querySelector('input[name="fio"]');
         const inputPhone = elem.querySelector('input[name="phone"]');
         inputName.setAttribute("required", true);
+        inputName.setAttribute("maxlength", "30");
         inputPhone.setAttribute("required", true);
+        inputPhone.setAttribute("maxlength", "16");
         inputName.addEventListener('input', (e) => {
             let inputName = '';
             if(/([^а-яa-z])/gi.test(e.target.value)) {
