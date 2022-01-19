@@ -4,7 +4,7 @@ const modal = () => {
     const callModal = document.getElementById('call');
     const headerModal = document.querySelector('.header-modal');
     const overlayModal = document.querySelector('.overlay');
-    const servicesBtn = document.querySelectorAll('.service-button');
+    const services = document.getElementById('services');
     const servicesModal = document.querySelector('.services-modal');
     const imageModal = document.querySelector('.modal-image');
 
@@ -30,8 +30,10 @@ const modal = () => {
         }
     });
 
-    servicesBtn.forEach(elem => {
-        elem.addEventListener('click', () => {
+
+    services.addEventListener('click', (e) => {
+        let target = e.target;
+        if(target.closest('.service-button')) {
             animate({
                 duration: 500,
                 timing(timeFraction) {
@@ -43,7 +45,7 @@ const modal = () => {
                     overlayModal.style.display = 'flex';
                 }
             });
-        });
+        }
     });
     servicesModal.addEventListener('click', (e) => {
         let target = e.target;
