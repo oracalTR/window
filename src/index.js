@@ -2,7 +2,7 @@ import scroll from './module/scroll';
 import modal from './module/modal';
 import timer from './module/timer';
 import slider from './module/slider';
-import checkInput from './module/checkinput';
+import checkInput from './module/checkInput';
 import resizeImage from './module/resizeimage';
 import menu from './module/menu';
 import review from './module/review';
