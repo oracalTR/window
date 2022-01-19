@@ -79,6 +79,13 @@ const review = () => {
         reviewData = data.comments;
         renderReview();
         changeReviewPage();
+    })
+    .catch(error => {
+        commentsContainer.insertAdjacentHTML('beforeend', `
+            <div class="col-lg-12">
+                Ошибка получения данных, попробуйте немного позже.
+            </div
+        `);
     });
 
 };
