@@ -10,7 +10,7 @@ import review from './module/review';
 document.addEventListener('DOMContentLoaded', () => {
     scroll();
     modal();
-    timer('21 January 2022');
+    timer('22 January 2022');
     slider();
     checkInput();
     resizeImage();

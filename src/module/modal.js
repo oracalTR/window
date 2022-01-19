@@ -8,7 +8,6 @@ const modal = () => {
     const servicesModal = document.querySelector('.services-modal');
     const imageModal = document.querySelector('.modal-image');
 
-    
     callModal.addEventListener('click', (e) => {
         animate({
             duration: 500,
@@ -32,11 +31,11 @@ const modal = () => {
     });
 
     servicesBtn.forEach(elem => {
-        elem.addEventListener('click', (e) => {
+        elem.addEventListener('click', () => {
             animate({
                 duration: 500,
                 timing(timeFraction) {
-                  return timeFraction;
+                    return timeFraction;
                 },
                 draw(progress) {
                     servicesModal.style.opacity = progress;
@@ -44,7 +43,6 @@ const modal = () => {
                     overlayModal.style.display = 'flex';
                 }
             });
-            
         });
     });
     servicesModal.addEventListener('click', (e) => {
