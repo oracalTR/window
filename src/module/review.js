@@ -5,7 +5,7 @@ const review = () => {
     let inteval;
 
     const getReview = () => {
-        return fetch('../comments.json')
+        return fetch('./comments.json')
         .then(response => {
             commentsContainer.insertAdjacentHTML('beforeend', `
             <div class="col-lg-12">
