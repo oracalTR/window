@@ -9,7 +9,7 @@ const checkInput = () => {
     const calcItems = [calcType, calcTypeMaterial, calcInput];
 
     let  checkName = (value) => {
-        return !/([^а-яa-z]+)/gi.test(value);
+        return /([а-яa-z]{2,})/gi.test(value);
     };
     let checkPhone = (value) => {
         return /^\+\d{1}\(\d{3}\)\d{3}-\d{2}-\d{2}$/g.test(value);
@@ -44,7 +44,7 @@ const checkInput = () => {
         inputPhone.setAttribute("required", true);
         inputName.addEventListener('input', (e) => {
             let inputName = '';
-            if(/([^а-яa-z]+)/gi.test(e.target.value)) {
+            if(/([^а-яa-z])/gi.test(e.target.value)) {
                 inputName = e.target.value.replace(/([^а-яa-z]+)/gi, ($1) => {
                     let newName = '';
                     newName = ``;
@@ -71,6 +71,9 @@ const checkInput = () => {
                     newPhone = `+${$2}(${$3})${$4}-${$5}-${$6}`;
                     return newPhone;
                 });
+                e.target.value = phone;
+            } else {
+                phone = e.target.value.replace(/([а-яa-z]+)/gi, '');
                 e.target.value = phone;
             }
             
