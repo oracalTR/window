@@ -8,7 +8,9 @@ const review = () => {
         return fetch('../comments.json')
         .then(response => {
             commentsContainer.insertAdjacentHTML('beforeend', `
+            <div class="col-lg-12">
             <img src="../images/users/sample.gif" alt="Загрузка отзывов">
+            </div
             `);
             return response;
         })
@@ -33,9 +35,7 @@ const review = () => {
             <div class="review-margin-bottom row comment-item">
             <div class="col-xs-3 col-sm-2">
                 <div class="review-user">
-                    <div class="col-lg-12">
-                        <img src="images/users/${reviewData[0].image ? reviewData[0].image : 'unknown.png'}" alt="" class="img-responsive avatar">
-                    </div>
+                    <img src="images/users/${reviewData[0].image ? reviewData[0].image : 'unknown.png'}" alt="" class="img-responsive avatar">
                 </div>
             </div>
             <div class="col-xs-9 col-sm-9">
