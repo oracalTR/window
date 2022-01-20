@@ -4,7 +4,6 @@ const menu = () => {
     boxNav.addEventListener('click', (e) => {
         let target = e.target;
         if(target.closest('.navbar-toggle')) {
-            console.log('Кнопка', target);
         }
     });
 };

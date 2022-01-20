@@ -1,5 +1,4 @@
 const sendForm = (formId, someElem = []) => {
-    console.log('Отправляем форму');
     const divMess = document.createElement('div');
     const sendMes = 'Отправка...';
     const sendError = 'Ошибка отправки, попробуйте позже...';
