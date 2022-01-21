@@ -7,6 +7,7 @@ const modal = () => {
     const services = document.getElementById('services');
     const servicesModal = document.querySelector('.services-modal');
     const imageModal = document.querySelector('.modal-image');
+    const navMenu = document.getElementById('navbar-collapse-fixed');
 
     callModal.addEventListener('click', (e) => {
         animate({
@@ -61,6 +62,8 @@ const modal = () => {
             servicesModal.style.display = 'none';
             overlayModal.style.display = 'none';
             imageModal.style.display = 'none';
+            navMenu.classList.add('collapse');
+            navMenu.classList.add('navbar-collapse');
         }
     });
 };
