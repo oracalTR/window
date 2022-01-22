@@ -91,10 +91,12 @@ const checkInput = () => {
 
         elem.addEventListener('submit', (e) => {
             e.preventDefault();
+            const inputName = elem.querySelector('input[name="fio"]');
+            const inputPhone = elem.querySelector('input[name="phone"]');
             if(!isErrorName && !isErrorPhone) {
                 sendForm(e.target, [{
                     type: 'block',
-                    id: 'calc-total'
+                    id: 'calc-total',
                 }]);
                 elem.reset();
             }

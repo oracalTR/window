@@ -16,7 +16,7 @@ const sendForm = (formId, someElem = []) => {
     
     someElem.forEach(elem => {
         const element = document.querySelector(`#${elem.id}`);
-        if(element) {
+        if(element && element.value) {
             formBody[elem.id] = element.value;
         }
     });
@@ -37,10 +37,10 @@ const sendForm = (formId, someElem = []) => {
             })
             .then(response => response.json())
             .then(data => {
-                const input = formId.querySelectorAll('input');
-                input.forEach(elem => {
-                    elem.value = '';
-                });
+                // const input = formId.querySelectorAll('input');
+                // input.forEach(elem => {
+                //     elem.value = '';
+                // });
                 divMess.textContent = successMess;
                 setTimeout(() => {
                     formId.querySelector('.message') ? formId.removeChild(formId.querySelector('.message')) : '';

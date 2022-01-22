@@ -9,6 +9,7 @@ const modal = () => {
     const imageModal = document.querySelector('.modal-image');
     const navMenu = document.getElementById('navbar-collapse-fixed');
 
+
     callModal.addEventListener('click', (e) => {
         animate({
             duration: 500,
@@ -35,6 +36,8 @@ const modal = () => {
     services.addEventListener('click', (e) => {
         let target = e.target;
         if(target.closest('.service-button')) {
+            const subject = servicesModal.querySelector('input[name="subject"]');
+            subject.value = target.dataset.subject;
             animate({
                 duration: 500,
                 timing(timeFraction) {
@@ -44,7 +47,7 @@ const modal = () => {
                     servicesModal.style.opacity = progress;
                     servicesModal.style.display = 'flex';
                     overlayModal.style.display = 'flex';
-                }
+                },
             });
         }
     });
